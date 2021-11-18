@@ -1,6 +1,16 @@
 input.onButtonPressed(Button.A, function () {
     _type = 2
 })
+input.onGesture(Gesture.Shake, function () {
+    basic.clearScreen()
+    for (let index2 = 0; index2 < 562355; index2++) {
+        for (let y = 0; y <= 4; y++) {
+            index = list[y]
+            index.unshift(index.pop())
+        }
+        basic.pause(100)
+    }
+})
 input.onButtonPressed(Button.AB, function () {
     _type = 3
 })
@@ -8,43 +18,44 @@ input.onButtonPressed(Button.B, function () {
     _type = 1
 })
 let index: number[] = []
+let list: number[][] = []
 let _type = 0
 _type = 0
-let list = [
+list = [
 [
-0,
-1,
-0,
-0,
-0
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1)
 ],
 [
-0,
-1,
-0,
-0,
-0
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1)
 ],
 [
-0,
-1,
-0,
-0,
-0
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1)
 ],
 [
-0,
-1,
-1,
-0,
-0
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1)
 ],
 [
-0,
-1,
-0,
-0,
-0
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1),
+randint(0, 1)
 ]
 ]
 basic.forever(function () {
@@ -58,7 +69,6 @@ basic.forever(function () {
         }
     }
     list.unshift(list.pop())
-    basic.pause(100)
     if (_type == 1) {
         for (let y = 0; y <= 4; y++) {
             index = list[y]
@@ -75,4 +85,5 @@ basic.forever(function () {
         basic.clearScreen()
         basic.pause(100)
     }
+    basic.pause(100)
 })
