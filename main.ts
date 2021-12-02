@@ -7,8 +7,14 @@ input.onButtonPressed(Button.A, function () {
     _type = 2
 })
 input.onGesture(Gesture.Shake, function () {
-    _type = 0
+    _type = 4
 })
+/**
+ * 按鈕A：上到左下
+ */
+/**
+ * A+B：一閃一閃的
+ */
 input.onButtonPressed(Button.AB, function () {
     _type = 3
     listt = [
@@ -49,6 +55,12 @@ input.onButtonPressed(Button.AB, function () {
     ]
     ]
 })
+/**
+ * 晃動:我忘記我要幹嘛了
+ */
+/**
+ * 按鈕B：左上到右下
+ */
 input.onButtonPressed(Button.B, function () {
     _type = 1
 })
@@ -102,6 +114,8 @@ let list2 = [
  */
 /**
  * 這絕對不是因為我懶得改了
+ * 
+ * (我忘記我本來要用什麼，所以放棄了)
  */
 basic.forever(function () {
     for (let y = 0; y <= 4; y++) {
@@ -119,13 +133,13 @@ basic.forever(function () {
             item = list2[y2]
             item.unshift(_py.py_array_pop(item))
         }
-        basic.pause(100)
+        basic.pause(200)
     } else if (_type == 2) {
         for (let y3 = 0; y3 <= 4; y3++) {
             item = list2[y3]
             item.push(item.shift())
         }
-        basic.pause(100)
+        basic.pause(200)
     } else if (_type == 3) {
         for (let y4 = 0; y4 <= 4; y4++) {
             for (let x2 = 0; x2 <= 4; x2++) {
@@ -136,7 +150,7 @@ basic.forever(function () {
                 }
             }
         }
-    } else if (_type == 0) {
+    } else if (_type == 4) {
         for (let index = 0; index < 5; index++) {
             list2.push(list2.shift())
         }
